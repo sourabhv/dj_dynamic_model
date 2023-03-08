@@ -25,3 +25,8 @@ Minimal dynamic model in django example
    ```sh
    ./manage.py make_dynamic_model
    ```
+
+
+## License
+
+MIT License
