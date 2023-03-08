@@ -15,6 +15,23 @@ class Field(models.Model):
         ),
     )
 
+    @property
+    def dj_field(self):
+        if self.type == "TextField":
+            return models.TextField()
+        elif self.type == "IntegerField":
+            return models.IntegerField()
+        elif self.type == "DecimalField":
+            return models.DecimalField()
+        elif self.type == "DateField":
+            return models.DateField()
+        elif self.type == "DateTimeField":
+            return models.DateTimeField()
+        elif self.type == "BooleanField":
+            return models.BooleanField()
+        else:
+            raise Exception(f"Unsupported dynamic model type: {self.type}")
+
     def __str__(self):
         return self.name
 
